@@ -24,3 +24,7 @@
 ;; ido-mode makes finding files way more awesome
 (require 'ido)
 (ido-mode 1)
+
+;; magit, not yours
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
