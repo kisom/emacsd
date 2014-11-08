@@ -1,16 +1,3 @@
-(require 'package)
-
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/"))
-
-(package-initialize)
-
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-
-
 ;;; Load my personal Lisp files.
 
 (setq lisp-base "~/.emacs.d/lisp/")
@@ -25,5 +12,5 @@
 		  (concat lisp-base el))
 		lisp-files))
 
-(load-theme 'wombat)
+(load-theme 'tronesque)
 
