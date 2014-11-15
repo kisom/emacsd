@@ -13,6 +13,7 @@
  ;; reduce brain damage
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(setq inhibit-startup-screen t)
 
  ;; hippie-expand is the best
 (require 'hippie-exp)
@@ -28,3 +29,7 @@
 ;; magit, not yours
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; undo-tree is undo done right
+(require 'undo-tree)
+(global-undo-tree-mode)
