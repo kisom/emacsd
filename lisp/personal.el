@@ -33,3 +33,6 @@
 ;; undo-tree is undo done right
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; i like refilling paragraphs
+(global-set-key (kbd "M-q") 'fill-paragraph)

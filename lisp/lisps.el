@@ -5,6 +5,7 @@
 
 ;;; Common Lisp
 
+(require 'slime)
 (add-hook 'common-lisp-mode #'enable-paredit-mode)
 
 
