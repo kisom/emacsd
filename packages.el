@@ -1,6 +1,10 @@
 ;;; This is a list of packages that are currently installed. This file
 ;;; should be compiled when the emacs lisp files are first loaded.
 
+(require 'cl)
+(require 'package)
+(package-initialize)
+
 (defun andl (lst)
   "Apply the #'and function to a list of truth values."
   (reduce (lambda (a b)
