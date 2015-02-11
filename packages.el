@@ -30,7 +30,12 @@
 	"ghci-completion"
 	"haskell-mode"
 	"hippie-expand-haskell"
+	"sublime-themes"
 	"tronesque"
+	"magit"
+	"paredit"
+	"slime"
+	"undo-tree"
 	"rainbow-delimiters"))
 
 (defun bootstrap-packages ()
