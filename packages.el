@@ -4,21 +4,23 @@
 (require 'package)
 (package-initialize)
 
-(setq initial-package-list
-      '(
-	;flymake-haskell-multi
-	;flymake-hlint
-	;ghc
-	;ghci-completion
-	;haskell-mode
-	;hippie-expand-haskell
-	;sublime-themes
-	;tronesque-theme
+(setq initial-package-list '(
+	flymake-haskell-multi
+	flymake-hlint
+	ghc
+	ghci-completion
+	haskell-mode
+	hippie-expand-haskell
+	sublime-themes
+	tronesque-theme
 	magit
 	paredit
 	slime
 	undo-tree
-	rainbow-delimiters))
+	rainbow-delimiters
+	scpaste
+	dylan-mode
+))
 
 (add-to-list 'package-archives
    '("marmalade" . "http://marmalade-repo.org/packages/"))
