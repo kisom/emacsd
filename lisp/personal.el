@@ -36,3 +36,6 @@
 
 ;; i like refilling paragraphs
 (global-set-key (kbd "M-q") 'fill-paragraph)
+
+;; i install things to /usr/local
+(setq exec-path (append exec-path '("/usr/local/bin")))

@@ -6,6 +6,8 @@
 ;;; Common Lisp
 
 (require 'slime)
+(setq inferior-lisp-program "sbcl")
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
 (add-hook 'common-lisp-mode #'enable-paredit-mode)
 
 
