@@ -39,3 +39,7 @@
 
 ;; i install things to /usr/local
 (setq exec-path (append exec-path '("/usr/local/bin")))
+
+;; tell me where i'm at
+(column-number-mode)
+
