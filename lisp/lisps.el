@@ -1,7 +1,7 @@
 ;;; This file contains configurations for various lisps.
 
 ;; don't load paredit until we load a lisp file.
-(autoload 'enable-paredit-mode "paredit" t)
+(require 'paredit)
 
 ;;; Common Lisp
 

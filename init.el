@@ -18,7 +18,7 @@
 		  lisp-files))
 
   (unless (null window-system)
-    (load-theme 'brin))
+    (load-theme 'slime))
  
   (message (concat
 	    "Start up time: "
@@ -27,3 +27,5 @@
 				 (current-time)
 				 startup-time))
 	    "ms")))
+
+
