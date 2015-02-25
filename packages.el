@@ -20,6 +20,7 @@
 	rainbow-delimiters
 	scpaste
 	dylan-mode
+	slime-theme
 ))
 
 (add-to-list 'package-archives
