@@ -17,8 +17,7 @@
 		    (concat lisp-base el))
 		  lisp-files))
 
-  (unless (null window-system)
-    (load-theme 'slime))
+  (load-theme 'slime)
  
   (message (concat
 	    "Start up time: "
