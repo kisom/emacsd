@@ -21,6 +21,7 @@
 	scpaste
 	dylan-mode
 	slime-theme
+	go-mode
 ))
 
 (add-to-list 'package-archives
