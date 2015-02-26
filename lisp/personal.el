@@ -43,3 +43,8 @@
 ;; tell me where i'm at
 (column-number-mode)
 
+;; ansi-term is sometimes more useful than eterm
+(global-set-key (kbd "C-x t")
+		(lambda () (interactive)
+		  (ansi-term "/bin/bash")))
+
