@@ -10,6 +10,7 @@
 		     "lisps.el"     ; lisp activations for great success
 		     "scpaste.el"   ; scpaste is great for sharing things
 		     "dylan.el"     ; need some dylan
+		     "go.el"        ; go go go!
 		     ))
 
   ;; load the lisp files
@@ -34,5 +35,6 @@
 				 (current-time)
 				 startup-time))
 	    "ms")))
+
 
 
