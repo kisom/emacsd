@@ -5,3 +5,4 @@
 (require 'dime)
 (dime-setup '(dime-dylan dime-repl))
 (setenv "OPEN_DYLAN_USER_REGISTRIES" "/Users/kyle/code/bylan/registry")
+(add-to-list 'exec-path "/usr/local/opendylan/bin")

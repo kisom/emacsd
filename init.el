@@ -12,13 +12,21 @@
 		     "dylan.el"     ; need some dylan
 		     ))
 
+  ;; load the lisp files
   (mapcar #'load
 	  (mapcar (lambda (el)
 		    (concat lisp-base el))
 		  lisp-files))
 
   (load-theme 'slime)
- 
+
+  ;; set eshell path after exec-path is finalised
+  (setenv "PATH"
+	  (mapconcat (lambda (dir)
+		       (or dir "."))
+		     exec-path
+		     path-separator))
+
   (message (concat
 	    "Start up time: "
 	    (format-time-string "%3N" 
