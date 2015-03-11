@@ -14,3 +14,9 @@
 ;;; ELisp
 
 (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+
+
+;;; Clojure
+
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+(add-hook 'clojurescript-mode-hook #'enable-paredit-mode)

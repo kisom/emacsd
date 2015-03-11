@@ -4,24 +4,33 @@
 (require 'package)
 (package-initialize)
 
+;; get this package list with C-h v package-activated-list
 (setq initial-package-list '(
-	flymake-haskell-multi
-	flymake-hlint
-	ghc
-	ghci-completion
-	haskell-mode
-	hippie-expand-haskell
-	sublime-themes
-	tronesque-theme
-	magit
-	paredit
-	slime
-	undo-tree
-	rainbow-delimiters
-	scpaste
-	dylan-mode
-	slime-theme
-	go-mode
+			     cider
+			     clojure-mode
+			     clojurescript-mode
+			     dash
+			     dylan-mode
+			     flymake-haskell-multi
+			     flymake-hlint
+			     flymake-easy
+			     ghc
+			     ghci-completion
+			     go-mode
+			     haskell-mode
+			     hippie-expand-haskell
+			     magit
+			     git-rebase-mode
+			     git-commit-mode
+			     paredit
+			     queue
+			     rainbow-delimiters
+			     scpaste
+			     slime
+			     slime-theme
+			     sublime-themes
+			     tronesque-theme
+			     undo-tree
 ))
 
 (add-to-list 'package-archives
