@@ -38,8 +38,10 @@
 (add-to-list 'package-archives
    '("melpa" . "http://melpa.org/packages/"))
 (package-refresh-contents)
+
 (dolist (package initial-package-list)
-   (package-install package))
+  (unless (package-installed-p package)
+    (package-install package)))
 
 
 
