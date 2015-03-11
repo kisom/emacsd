@@ -29,6 +29,7 @@
 			     slime
 			     slime-theme
 			     sublime-themes
+			     transpose-frame
 			     tronesque-theme
 			     undo-tree
 ))

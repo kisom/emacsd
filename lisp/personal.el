@@ -2,6 +2,7 @@
 
  ;; set up package handling
 (require 'package)
+(require 'transpose-frame)
 
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -48,3 +49,7 @@
 		(lambda () (interactive)
 		  (ansi-term "/bin/bash")))
 
+
+;; sometimes you just wanna (╯° °）╯︵ ┻━┻) but with frames
+(global-set-key (kbd "C-c C-s") 'flip-frame)
+(global-set-key (kbd "C-c C-f"  'flop-frame))
