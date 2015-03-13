@@ -54,6 +54,6 @@
 (global-set-key (kbd "C-c C-f") 'flop-frame)
 
 ;; matching delimiters
-(require 'rainbow-delimiters-mode)
+(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
