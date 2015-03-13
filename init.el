@@ -36,5 +36,3 @@
 				 startup-time))
 	    "ms")))
 
-
-

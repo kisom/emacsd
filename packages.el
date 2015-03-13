@@ -22,6 +22,7 @@
 			     magit
 			     git-rebase-mode
 			     git-commit-mode
+			     markdown-mode
 			     paredit
 			     queue
 			     rainbow-delimiters

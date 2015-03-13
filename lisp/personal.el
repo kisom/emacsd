@@ -48,8 +48,12 @@
 		(lambda () (interactive)
 		  (ansi-term "/bin/bash")))
 
-
 ;; sometimes you just wanna (╯° °）╯︵ ┻━┻) but with frames
 (require 'transpose-frame)
 (global-set-key (kbd "C-c C-s") 'flip-frame)
 (global-set-key (kbd "C-c C-f") 'flop-frame)
+
+;; matching delimiters
+(require 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
