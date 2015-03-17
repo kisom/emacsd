@@ -57,3 +57,6 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; code-b-gone
+(global-set-key (kbd "C-c C-;") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
