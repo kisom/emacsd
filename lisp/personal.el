@@ -60,3 +60,9 @@
 ;; code-b-gone
 (global-set-key (kbd "C-c C-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
+
+;; convert markdown links to org links
+(defun markdown-link->org ()
+  (interactive)
+  (while (search-forward-regexp "\\[\\(.+\\)\\](\\(.+\\))")
+    (replace-match (format "[[%s][%s]]" (match-string 2) (match-string 1)))))

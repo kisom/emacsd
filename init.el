@@ -1,4 +1,4 @@
-;;; Load my personal Lisp files.
+;; Load my personal Lisp files.
 
 (let ((startup-time (current-time)))
   (setq inhibit-startup-echo-area-message
@@ -19,7 +19,7 @@
 		    (concat lisp-base el))
 		  lisp-files))
 
-  (load-theme 'slime)
+  (load-theme 'bubbleberry)
 
   ;; set eshell path after exec-path is finalised
   (setenv "PATH"
@@ -35,4 +35,5 @@
 				 (current-time)
 				 startup-time))
 	    "ms")))
+
 

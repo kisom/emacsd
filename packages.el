@@ -5,7 +5,7 @@
 (package-initialize)
 
 ;; get this package list with C-h v package-activated-list
-(setq initial-package-list '(
+(setq initial-package-list '(bubbleberry-theme
 			     cider
 			     clojure-mode
 			     clojurescript-mode
