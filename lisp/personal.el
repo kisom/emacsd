@@ -72,3 +72,9 @@
   (interactive)
   (while (search-forward-regexp "\\[\\[\\(.+?\\)\\]\\[\\(.+?\\)\\]\\]")
     (replace-match (format "[%s](%s)" (match-string 2) (match-string 1)))))
+
+(defun k-insert-timestamp ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%z")))
+
+(global-set-key (kbd "C-c T") 'k-insert-timestamp)
