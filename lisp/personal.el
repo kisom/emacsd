@@ -79,8 +79,9 @@
 
 (defun k-insert-date ()
   (interactive)
-  (insert (format-time-string "%T-%m-%d")))
+  (insert (format-time-string "%Y-%m-%d")))
 
 (global-set-key (kbd "C-c t t") 'k-insert-timestamp)
 (global-set-key (kbd "C-c t d") 'k-insert-date)
+
 
