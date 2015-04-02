@@ -17,7 +17,10 @@
 
  ;; hippie-expand is the best
 (require 'hippie-exp)
-(global-set-key (kbd "<C-tab>") 'hippie-expand)
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(ac-set-trigger-key "<C-tab>")
+(global-set-key (kbd "<C-tab>") 'ac-expand)
 
  ;; eshell is pretty okay
 (global-set-key (kbd "C-x m") 'eshell)
