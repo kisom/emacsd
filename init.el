@@ -5,6 +5,7 @@
 	"kyle")
   (setq lisp-base "~/.emacs.d/lisp/")
   (setq lisp-files '("custom.el"    ; first, load customized-*
+		     "util.el"      ; load any utilities needed
 		     "personal.el"  ; any high-level customisations
 		     "haskell.el"   ; fun with haskell-mode
 		     "lisps.el"     ; lisp activations for great success
@@ -28,12 +29,10 @@
 		     exec-path
 		     path-separator))
 
-  (message (concat
-	    "Start up time: "
-	    (format-time-string "%3N" 
-				(time-subtract
-				 (current-time)
-				 startup-time))
-	    "ms")))
-
+  (message (format "Start up time: %0.3f ms"
+		   (* 1000
+		      (time-delta-to-number
+		       (time-subtract
+			(current-time)
+			startup-time))))))
 

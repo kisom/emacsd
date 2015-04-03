@@ -64,26 +64,7 @@
 (global-set-key (kbd "C-c C-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 
-;; convert markdown links to org links, but also the other way because
-;; some people just need their markdown
-(defun markdown-link->org ()
-  (interactive)
-  (while (search-forward-regexp "\\[\\(.+?\\)\\](\\(.+?\\))")
-    (replace-match (format "[[%s][%s]]" (match-string 2) (match-string 1)))))
-
-(defun org->markdown-link ()
-  (interactive)
-  (while (search-forward-regexp "\\[\\[\\(.+?\\)\\]\\[\\(.+?\\)\\]\\]")
-    (replace-match (format "[%s](%s)" (match-string 2) (match-string 1)))))
-
-(defun k-insert-timestamp ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%z")))
-
-(defun k-insert-date ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
+;; the timestamping functions are in util.el
 (global-set-key (kbd "C-c t t") 'k-insert-timestamp)
 (global-set-key (kbd "C-c t d") 'k-insert-date)
 
