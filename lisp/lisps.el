@@ -9,7 +9,13 @@
 (setq inferior-lisp-program "sbcl")
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (add-hook 'common-lisp-mode #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'lisp-mode #'enable-paredit-mode)
+
+;; asd files need love too
+(add-to-list 'auto-mode-alist
+             '("\\.asd\\'" . (lambda ()
+			       (common-lisp-mode)
+			       (paredit-mode))))
 
 ;;; ELisp
 
