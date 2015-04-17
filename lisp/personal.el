@@ -70,3 +70,17 @@
 
 ;; i read the instructions all right
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+(defun fix-paste ()
+   (interactive)
+   (save-excursion
+     (beginning-of-buffer)
+     (replace-string "“" "\"")
+     (replace-string "”" "\"")
+     (replace-string "’" "'")
+     (replace-string "—" "---")
+     ;(replace-string "  " " ")
+     (replace-string "- " "")
+     (message "Paste fixed.")))
+
+(global-set-key (kbd "C-x p") 'fix-paste)
