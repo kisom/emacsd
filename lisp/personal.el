@@ -26,6 +26,8 @@
 (global-set-key (kbd "C-x m") 'eshell)
 
 ;; ido-mode makes finding files way more awesome
+;;    note: C-x C-f C-f will kick back to normal find-file for when ido's tab
+;;    completion is getting in the way.
 (require 'ido)
 (ido-mode 1)
 
