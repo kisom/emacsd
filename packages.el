@@ -16,6 +16,7 @@
 			     ghc
 			     ghci-completion
 			     go-mode
+			     go-scratch
 			     haskell-mode
 			     hippie-expand-haskell
 			     kibit-mode
