@@ -14,6 +14,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (setq inhibit-startup-screen t)
+(setq display-time-24hr-format t)
+(display-time-mode)
 
  ;; hippie-expand is the best
 (require 'hippie-exp)
@@ -73,6 +75,7 @@
 ;; i read the instructions all right
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; please to be not ruining pastes
 (defun fix-paste ()
    (interactive)
    (save-excursion
@@ -84,5 +87,8 @@
      ;(replace-string "  " " ")
      (replace-string "- " "")
      (message "Paste fixed.")))
-
 (global-set-key (kbd "C-x p") 'fix-paste)
+
+;; for writing blog posts and org docs
+(global-set-key (kbd "C-x w") 'count-words)
+
