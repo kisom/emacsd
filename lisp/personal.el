@@ -92,3 +92,9 @@
 ;; for writing blog posts and org docs
 (global-set-key (kbd "C-x w") 'count-words)
 
+;;; used with pollen
+(global-set-key (kbd "C-c C-d")
+		(lambda () (interactive) (insert "\u25ca")))
+(add-to-list 'auto-mode-alist
+	     '("\\.pm$" . text-mode))
+

@@ -27,6 +27,9 @@
 		    (concat lisp-base el))
 		  lisp-files))
 
+  ;; load scriba from contrib
+  (load "~/.emacs.d/contrib/scriba.el")
+
   (load-theme 'bubbleberry)
 
   ;; set eshell path after exec-path is finalised
@@ -55,3 +58,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil)))))
+(put 'downcase-region 'disabled nil)
