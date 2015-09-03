@@ -26,3 +26,14 @@
 (defun k-insert-date ()
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
+
+(defun fix-paste ()
+   (interactive)
+   (save-excursion
+     (beginning-of-buffer)
+     (replace-string "“" "\"")
+     (replace-string "”" "\"")
+     (replace-string "’" "'")
+     (replace-string "—" "---")
+     (replace-string "- " "")
+     (message "Paste fixed.")))

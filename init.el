@@ -46,4 +46,3 @@
 		       (time-subtract
 			(current-time)
 			startup-time))))))
-

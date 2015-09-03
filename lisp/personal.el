@@ -76,17 +76,6 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; please to be not ruining pastes
-(defun fix-paste ()
-   (interactive)
-   (save-excursion
-     (beginning-of-buffer)
-     (replace-string "“" "\"")
-     (replace-string "”" "\"")
-     (replace-string "’" "'")
-     (replace-string "—" "---")
-     ;(replace-string "  " " ")
-     (replace-string "- " "")
-     (message "Paste fixed.")))
 (global-set-key (kbd "C-x p") 'fix-paste)
 
 ;; for writing blog posts and org docs
@@ -97,4 +86,3 @@
 		(lambda () (interactive) (insert "\u25ca")))
 (add-to-list 'auto-mode-alist
 	     '("\\.pm$" . text-mode))
-
