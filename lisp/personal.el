@@ -86,3 +86,6 @@
 		(lambda () (interactive) (insert "\u25ca")))
 (add-to-list 'auto-mode-alist
 	     '("\\.pm$" . text-mode))
+
+;;; auto sexp formatting 
+(global-set-key (kbd "C-c C-l f") 'sexp-fmt)

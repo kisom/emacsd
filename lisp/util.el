@@ -37,3 +37,31 @@
      (replace-string "—" "---")
      (replace-string "- " "")
      (message "Paste fixed.")))
+
+(defun update-initial-packages ()
+  "Merge the current activated package list with those in the
+initial packages list, and dump the new list to the end of the
+initial-packages.el buffer for review."
+  (load (format "%s../initial-packages.el" lisp-base))
+  (find-file (format "%s../initial-packages.el" lisp-base))
+  (goto-char (point-max))
+  (if initial-package-list
+      (progn
+	(message "Updating package list.")
+	(let ((merged-packages
+	       (remove-duplicates
+		(append
+		 package-activated-list
+		 initial-package-list))))
+	  (insert (format "\n\n'(defvar initial-package-list\n(\n"))
+	  (dolist (pkg actual-initial-packages)
+	    (insert (format "\t%s\n" pkg)))
+	  (insert (format "))\n"))))
+    (message "No package list.")))
+
+(defun sexp-fmt ()
+  "Automatically format the "
+  (interactive)
+  (beginning-of-defun)
+  (mark-sexp)
+  (indent-pp-sexp))
