@@ -65,3 +65,10 @@ initial-packages.el buffer for review."
   (beginning-of-defun)
   (mark-sexp)
   (indent-pp-sexp))
+
+(defun woman-only ()
+  (interactive)
+  (with-current-buffer (current-buffer)
+    (save-excursion
+      (woman)
+      (delete-window))))

@@ -15,6 +15,7 @@
 		     "util.el"      ; load any utilities needed
 		     "personal.el"  ; any high-level customisations
 		     "enabled.el"   ; turn on any default-disabled functions
+		     "c.el"         ; for maximum fun
 		     "haskell.el"   ; fun with haskell-mode
 		     "lisps.el"     ; lisp activations for great success
 		     "scpaste.el"   ; scpaste is great for sharing things
@@ -46,3 +47,4 @@
 		       (time-subtract
 			(current-time)
 			startup-time))))))
+

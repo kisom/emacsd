@@ -89,3 +89,8 @@
 
 ;;; auto sexp formatting 
 (global-set-key (kbd "C-c C-l f") 'sexp-fmt)
+
+(global-set-key (kbd "C-h u") 'woman)
+(global-set-key (kbd "C-h U") 'woman-only)
+(when window-system
+  (setq woman-use-own-frame t))
