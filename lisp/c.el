@@ -2,7 +2,24 @@
 ;;; let's try to make emacs work for C code.
 
 
+;;; from Chris Neukirchen's .emacs
+;;;     http://chneukirchen.org/dotfiles/.emacs
+(defun new-c-lineup-arglist (langelem)
+  (save-excursion
+    (goto-char (cdr langelem))
+    (setq syntax (car (car (c-guess-basic-syntax))))
+    (while (or (eq syntax 'arglist-intro)
+               (or (eq syntax 'arglist-cont)
+                   (eq syntax 'arglist-cont-nonempty)))
+      (forward-line -1)
+      (setq syntax (car (car (c-guess-basic-syntax)))))
+    (beginning-of-line)
+    (re-search-forward "[^ \t]" (c-point 'eol))
+    (goto-char (+ (match-beginning 0) 4))
+    (vector (current-column))))
 
+;;; from Chris Neukirchen's .emacs
+;;;     http://chneukirchen.org/dotfiles/.emacs
 (c-add-style "openbsd"
              '("bsd"
                (c-ignore-auto-fill . '(string))
@@ -23,4 +40,6 @@
                (indent-tabs-mode . t)))
 
 (setq c-default-style "openbsd")
-
+(add-hook 'c-mode 'cscope-minor-mode)
+(require 'xcscope)
+(cscope-setup)

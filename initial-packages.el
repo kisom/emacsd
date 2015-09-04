@@ -64,4 +64,5 @@
 			     undo-tree
 			     utop
 			     w3m
+			     xcscope
 			     yaxception))
