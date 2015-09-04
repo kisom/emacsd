@@ -13,6 +13,8 @@
    '("melpa" . "http://melpa.org/packages/"))
 (package-refresh-contents)
 
+(load (format "%s/%s" (getenv "HOME") ".emacs.d/initial-packages.el"))
+
 (dolist (package initial-package-list)
   (unless (package-installed-p package)
     (package-install package)))
