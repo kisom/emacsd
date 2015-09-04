@@ -28,15 +28,15 @@
   (insert (format-time-string "%Y-%m-%d")))
 
 (defun fix-paste ()
-   (interactive)
-   (save-excursion
-     (beginning-of-buffer)
-     (replace-string "“" "\"")
-     (replace-string "”" "\"")
-     (replace-string "’" "'")
-     (replace-string "—" "---")
-     (replace-string "- " "")
-     (message "Paste fixed.")))
+  (interactive)
+  (save-excursion
+    (beginning-of-buffer)
+    (replace-string "“" "\"")
+    (replace-string "”" "\"")
+    (replace-string "’" "'")
+    (replace-string "—" "---")
+    (replace-string "- " "")
+    (message "Paste fixed.")))
 
 (defun update-initial-packages ()
   "Merge the current activated package list with those in the
@@ -72,3 +72,10 @@ initial-packages.el buffer for review."
     (save-excursion
       (woman)
       (delete-window))))
+
+(defun k-indent-buffer ()
+  "Indent the entire buffer."
+  (interactive)
+  (with-current-buffer (current-buffer)
+    (save-excursion
+      (indent-region (point-min) (point-max)))))

@@ -43,3 +43,14 @@
 (add-hook 'c-mode 'cscope-minor-mode)
 (require 'xcscope)
 (cscope-setup)
+
+
+(defun k-compile-interactive ()
+  (interactive)
+  (setq current-prefix-arg '(4))
+  (call-interactively 'recompile))
+
+(global-set-key (kbd "C-x c") 'k-compile-interactive)
+
+
+(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
