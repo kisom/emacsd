@@ -21,11 +21,11 @@
 
 (defun k-insert-timestamp ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%z")))
+  (insert (format-time-string "%y-%m-%dt%h:%m:%s%z")))
 
 (defun k-insert-date ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
+  (insert (format-time-string "%y-%m-%d")))
 
 (defun fix-paste ()
   (interactive)
@@ -36,10 +36,10 @@
     (replace-string "’" "'")
     (replace-string "—" "---")
     (replace-string "- " "")
-    (message "Paste fixed.")))
+    (message "paste fixed.")))
 
 (defun update-initial-packages ()
-  "Merge the current activated package list with those in the
+  "merge the current activated package list with those in the
 initial packages list, and dump the new list to the end of the
 initial-packages.el buffer for review."
   (load (format "%s../initial-packages.el" lisp-base))
@@ -47,7 +47,7 @@ initial-packages.el buffer for review."
   (goto-char (point-max))
   (if initial-package-list
       (progn
-	(message "Updating package list.")
+	(message "updating package list.")
 	(let ((merged-packages
 	       (remove-duplicates
 		(append
@@ -57,10 +57,10 @@ initial-packages.el buffer for review."
 	  (dolist (pkg actual-initial-packages)
 	    (insert (format "\t%s\n" pkg)))
 	  (insert (format "))\n"))))
-    (message "No package list.")))
+    (message "no package list.")))
 
 (defun sexp-fmt ()
-  "Automatically format the "
+  "automatically format the "
   (interactive)
   (beginning-of-defun)
   (mark-sexp)

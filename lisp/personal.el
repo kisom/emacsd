@@ -96,3 +96,7 @@
   (setq woman-use-own-frame t))
 
 (global-set-key (kbd "C-c f") 'k-indent-buffer)
+
+;;; i like cua-rectangle
+(cua-mode t)
+(cua-selection-mode 'emacs)
