@@ -1,6 +1,6 @@
 ;;; Various personal customisations.
 
- ;; set up package handling
+;; set up package handling
 (require 'package)
 
 (add-to-list 'package-archives
@@ -10,21 +10,21 @@
 
 (package-initialize)
 
- ;; reduce brain damage
+;; reduce brain damage
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (setq inhibit-startup-screen t)
 (setq display-time-24hr-format t)
 (display-time-mode)
 
- ;; hippie-expand is the best
+;; hippie-expand is the best
 (require 'hippie-exp)
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (ac-set-trigger-key "<C-tab>")
 (global-set-key (kbd "<C-tab>") 'ac-expand)
 
- ;; eshell is pretty okay
+;; eshell is pretty okay
 (global-set-key (kbd "C-x m") 'eshell)
 
 ;; ido-mode makes finding files way more awesome
@@ -100,3 +100,15 @@
 ;;; i like cua-rectangle
 (cua-mode t)
 (cua-selection-mode 'emacs)
+
+;; view epubs as HTML directories
+;; (setq auto-mode-alist
+;;       (append (list '("\\.epub$" . archive-mode))
+;; 	      auto-mode-alist))
+
+;; (setq auto-coding-alist
+;;       (append
+;;        (list
+;; 	'("\\.epub$" . no-conversion))
+;;        auto-coding-alist))
+

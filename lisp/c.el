@@ -44,6 +44,20 @@
 (require 'xcscope)
 (cscope-setup)
 
+;;; if heathen mode is t, we won't autoformat C buffers.
+(defcustom k-heathen-mode nil)
+
+;;; it's like gofmt but for C.
+(defun k-save-c-hook ()
+  (interactive)
+  (when (and (eq 'c-mode (buffer-local-value 'major-mode (current-buffer)))
+	     (not k-heathen-mode))
+    (progn
+      (with-current-buffer (current-buffer)
+	(save-excursion)
+	(call-interactively 'k-indent-buffer)
+	(call-interactively 'tabify)
+	(message "Formatting C code.")))))
 
 (defun k-compile-interactive ()
   (interactive)
@@ -52,5 +66,7 @@
 
 (global-set-key (kbd "C-x c") 'k-compile-interactive)
 
-
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+(add-hook 'c-mode-hook (lambda ()
+			 (add-hook 'before-save-hook 'k-save-c-hook t t)))
+
