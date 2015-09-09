@@ -45,7 +45,8 @@
 (cscope-setup)
 
 ;;; if heathen mode is t, we won't autoformat C buffers.
-(defcustom k-heathen-mode nil)
+(defcustom k-heathen-mode nil
+  "Placate heathens who follow the false style gods.")
 
 ;;; it's like gofmt but for C.
 (defun k-save-c-hook ()
