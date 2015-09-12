@@ -32,7 +32,10 @@
   ;; load scriba from contrib
   (load "~/.emacs.d/contrib/scriba.el")
 
-  (load-theme 'slime)
+  (if 'window-system
+      (load-theme 'slime)
+    (progn
+      (setq-default global-font-lock-mode nil)))
 
   ;; set eshell path after exec-path is finalised
   (setenv "PATH"
