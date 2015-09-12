@@ -101,6 +101,9 @@
 (cua-mode t)
 (cua-selection-mode 'emacs)
 
+;;; liberate the emacs os
+(global-set-key (kbd "C-c b") 'surfraw)
+
 ;; view epubs as HTML directories
 ;; (setq auto-mode-alist
 ;;       (append (list '("\\.epub$" . archive-mode))
