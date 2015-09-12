@@ -15,8 +15,8 @@
   (let ((path (format "%s/lib/surfraw/" base)))
     (when (file-exists-p path)
       (split-string
-		(shell-command-to-string
-		 (concat "ls " path " | xargs"))))))
+       (shell-command-to-string
+	(concat "ls " path " | xargs"))))))
 
 (defun slash-dir-p (path)
   "Does the string represent a name with a trailing slash?"
@@ -25,13 +25,13 @@
        (string-suffix-p "/" path)))
 
 (defun strip-trailing-slash (path)
-  "In order to traverse a path upwards, we shall need to remove
+    "In order to traverse a path upwards, we shall need to remove
 the trailing slash from the directory name."
-  (when (slash-dir-p path)
+    (when (slash-dir-p path)
       (subseq path 0 -1)))
 
+;;; Where oh where can I find the elvis?
 (defvar *surfraw-places*
-  "Where oh where can I find the elvis?"
   (list "/usr/local" "/usr"
 	(strip-trailing-slash
 	 (file-name-directory
@@ -39,11 +39,13 @@ the trailing slash from the directory name."
 	   (file-name-directory
 	    (executable-find "surfraw")))))))
 
+;;; Grab the first set of elvis that's non-empty.
 (defvar *elvi-list*
-  "Grab the first set of elvis that's non-empty."
   (reduce (lambda (x y)
 	    (or x (list-elvi-at y)))
-	  *surfraw-places*))
+	  (rest *surfraw-places*)
+	  :initial-value (list-elvi-at
+			  (first *surfraw-places*))))
 
 (defcustom *surfraw-browse* #'w3m-browse-url
   "Set the browser to use with surfraw.")
