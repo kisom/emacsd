@@ -78,4 +78,6 @@ initial-packages.el buffer for review."
   (interactive)
   (with-current-buffer (current-buffer)
     (save-excursion
-      (indent-region (point-min) (point-max)))))
+      (indent-region (point-min) (point-max))
+      (replace-regexp "[ 	]+$" "" nil (point-min) (point-max))
+      (tabify))))
