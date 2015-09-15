@@ -4,7 +4,7 @@
 (require 'paredit)
 
 ;;; Common Lisp
-(setq inferior-lisp-program "ccl")
+(setq inferior-lisp-program "sbcl")
 (require 'slime)
 (slime-setup '(slime-fancy))    ;adds some nice features
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
