@@ -70,10 +70,8 @@
 
 ;; the timestamping functions are in util.el
 (global-set-key (kbd "C-c t t") 'k-insert-timestamp)
+(global-set-key (kbd "C-c t u") 'k-insert-timestamp)
 (global-set-key (kbd "C-c t d") 'k-insert-date)
-
-;; i read the instructions all right
-(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; please to be not ruining pastes
 (global-set-key (kbd "C-x p") 'fix-paste)

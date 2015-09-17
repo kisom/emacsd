@@ -19,6 +19,12 @@
   (while (search-forward-regexp "\\[\\[\\(.+?\\)\\]\\[\\(.+?\\)\\]\\]")
     (replace-match (format "[%s](%s)" (match-string 2) (match-string 1)))))
 
+(defun k-insert-timestamp-tai ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z"
+			      (current-time)
+			      "TAI")))
+
 (defun k-insert-timestamp ()
   (interactive)
   (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z")))
@@ -81,3 +87,31 @@ initial-packages.el buffer for review."
       (indent-region (point-min) (point-max))
       (replace-regexp "[ 	]+$" "" nil (point-min) (point-max))
       (tabify))))
+
+(defconst k-figlet-font ""
+  "Select the font for figlet.")
+
+(defconst k-figlet-width 72
+  "Width for figlet.")
+
+(defun figlet (text)
+  "Figlet. In emacs."
+  (interactive (list (read-string "Text: ")))
+  (let ((font (if (string-equal k-figlet-font "")
+		  ""
+		(format "-f %s" k-figlet-font))))
+    (insert
+     (concat "\n"
+	     (shell-command-to-string
+	      (format "figlet -w %d %s %s" k-figlet-width font text))))))
+
+(defun figletc (text)
+  "Figlet. In emacs."
+  (interactive (list (read-string "Text: ")))
+  (let ((font (if (string-equal k-figlet-font "")
+		  ""
+		(format "-f %s" k-figlet-font))))
+    (insert
+     (concat "\n"
+	     (shell-command-to-string
+	      (format "figlet -c -w %d %s %s" k-figlet-width font text))))))
