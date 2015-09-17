@@ -27,7 +27,9 @@
 
 (defun k-insert-timestamp ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z")))
+  (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z"
+			      (current-time)
+			      "TAI")))
 
 (defun k-insert-date ()
   (interactive)
@@ -135,3 +137,6 @@ binding evaluates to T, evaluate @c(body) in a @c(progn)."
   (insert
    (replace-regexp-in-string "\n\\'" ""
 			     (shell-command-to-string "uuidgen"))))
+     (shell-command-to-string
+      (format "figlet %s %s"
+	      font text)))))
