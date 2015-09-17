@@ -21,11 +21,11 @@
 
 (defun k-insert-timestamp ()
   (interactive)
-  (insert (format-time-string "%y-%m-%dt%h:%m:%s%z")))
+  (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z")))
 
 (defun k-insert-date ()
   (interactive)
-  (insert (format-time-string "%y-%m-%d")))
+  (insert (format-time-string "%Y-%m-%d")))
 
 (defun fix-paste ()
   (interactive)
