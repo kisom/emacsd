@@ -25,10 +25,10 @@
        (string-suffix-p "/" path)))
 
 (defun strip-trailing-slash (path)
-    "In order to traverse a path upwards, we shall need to remove
+  "In order to traverse a path upwards, we shall need to remove
 the trailing slash from the directory name."
-    (when (slash-dir-p path)
-      (subseq path 0 -1)))
+  (when (slash-dir-p path)
+    (cl-subseq path 0 -1)))
 
 ;;; Where oh where can I find the elvis?
 (defvar *surfraw-places*
@@ -41,11 +41,11 @@ the trailing slash from the directory name."
 
 ;;; Grab the first set of elvis that's non-empty.
 (defvar *elvi-list*
-  (reduce (lambda (x y)
-	    (or x (list-elvi-at y)))
-	  (rest *surfraw-places*)
-	  :initial-value (list-elvi-at
-			  (first *surfraw-places*))))
+  (cl-reduce (lambda (x y)
+	       (or x (list-elvi-at y)))
+	     (cdr *surfraw-places*)
+	     :initial-value (list-elvi-at
+			     (car *surfraw-places*))))
 
 (defcustom *surfraw-browse* #'w3m-browse-url
   "Set the browser to use with surfraw.")

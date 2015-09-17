@@ -1,15 +1,5 @@
 ;;; Various personal customisations.
 
-;; set up package handling
-(require 'package)
-
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/"))
-
-(package-initialize)
-
 ;; reduce brain damage
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -46,6 +36,9 @@
 
 ;; i install things to /usr/local
 (add-to-list 'exec-path "/usr/local/bin")
+
+;; and i keep personal bins in ~/bin
+(add-to-list 'exec-path "/home/kyle/bin")
 
 ;; tell me where i'm at
 (column-number-mode)

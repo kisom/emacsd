@@ -115,3 +115,17 @@ initial-packages.el buffer for review."
      (concat "\n"
 	     (shell-command-to-string
 	      (format "figlet -c -w %d %s %s" k-figlet-width font text))))))
+
+
+(defun orletfun (bindings finally)
+  (if (null bindings)
+      finally
+    `(let (,(first bindings))
+       (when ,(first (first bindings))
+	 ,(orletfun (rest bindings) finally)))))
+
+(defmacro orlet (bindings &rest body)
+  "For each set of bindings, evaluate them in sequence. If each
+binding evaluates to T, evaluate @c(body) in a @c(progn)."
+  (orletfun bindings `(progn ,@body)))
+
