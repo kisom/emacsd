@@ -129,3 +129,9 @@ initial-packages.el buffer for review."
 binding evaluates to T, evaluate @c(body) in a @c(progn)."
   (orletfun bindings `(progn ,@body)))
 
+(defun uuidgen ()
+  "Generate an insert a UUID."
+  (interactive)
+  (insert
+   (replace-regexp-in-string "\n\\'" ""
+			     (shell-command-to-string "uuidgen"))))
