@@ -27,7 +27,12 @@
 
 (defun k-insert-timestamp ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%dT%H:%m:%S%z"
+  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%z"
+			      (current-time))))
+
+(defun k-insert-timestamp-tai ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%z"
 			      (current-time)
 			      "TAI")))
 
@@ -139,4 +144,15 @@ binding evaluates to T, evaluate @c(body) in a @c(progn)."
 			     (shell-command-to-string "uuidgen"))))
      (shell-command-to-string
       (format "figlet %s %s"
+	      font text)))))
+
+(defun figletc (text)
+  "Figlet. In emacs."
+  (interactive (list (read-string "Text: ")))
+  (let ((font (if (string-equal k-figlet-font "")
+		  ""
+		(format "-f %s" k-figlet-font))))
+    (insert
+     (shell-command-to-string
+      (format "figlet -c -w 72 %s %s"
 	      font text)))))

@@ -63,7 +63,7 @@
 
 ;; the timestamping functions are in util.el
 (global-set-key (kbd "C-c t t") 'k-insert-timestamp)
-(global-set-key (kbd "C-c t u") 'k-insert-timestamp)
+(global-set-key (kbd "C-c t u") 'k-insert-timestamp-tai)
 (global-set-key (kbd "C-c t d") 'k-insert-date)
 
 ;; please to be not ruining pastes

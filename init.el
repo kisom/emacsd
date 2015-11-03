@@ -23,6 +23,7 @@
 	"kyle")
   (setq lisp-base "~/.emacs.d/lisp/")
   (setq lisp-files '("custom.el"    ; first, load customized-*
+		     "display.el"   ; get your cool looks on
 		     "util.el"      ; load any utilities needed
 		     "surfraw.el"   ; better browsing
 		     "personal.el"  ; any high-level customisations
@@ -62,4 +63,3 @@
 		       (time-subtract
 			(current-time)
 			startup-time))))))
-
