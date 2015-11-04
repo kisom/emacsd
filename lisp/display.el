@@ -18,3 +18,5 @@
       (_ (set-font font)))))
 
 
+;;; load custom themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")

@@ -142,17 +142,3 @@ binding evaluates to T, evaluate @c(body) in a @c(progn)."
   (insert
    (replace-regexp-in-string "\n\\'" ""
 			     (shell-command-to-string "uuidgen"))))
-     (shell-command-to-string
-      (format "figlet %s %s"
-	      font text)))))
-
-(defun figletc (text)
-  "Figlet. In emacs."
-  (interactive (list (read-string "Text: ")))
-  (let ((font (if (string-equal k-figlet-font "")
-		  ""
-		(format "-f %s" k-figlet-font))))
-    (insert
-     (shell-command-to-string
-      (format "figlet -c -w 72 %s %s"
-	      font text)))))
