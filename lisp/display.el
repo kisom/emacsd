@@ -9,12 +9,13 @@
 
 (when window-system
   (let* ((ffam (font-family-list))
-	 (font (or (font-present-p "Triplicate Code" ffam)
+	 (font (or (font-present-p "Triplicate T4c" ffam)
 		   (font-present-p "Inconsolata" ffam)
 		   (font-present-p "Anonymous Pro" ffam)
 		   (font-present-p "Ubuntu Mono" ffam))))
     (pcase (system-name)
       ("tessier" (set-font font 12))
+      ("straka" (set-font font 11))
       (_ (set-font font)))))
 
 
