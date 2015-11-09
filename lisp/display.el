@@ -16,6 +16,7 @@
     (pcase (system-name)
       ("tessier" (set-font font 12))
       ("straka" (set-font font 11))
+      ("straka-prime.local" (set-font font 12))
       (_ (set-font font)))))
 
 
