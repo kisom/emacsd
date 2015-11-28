@@ -29,8 +29,7 @@
   (setq inhibit-startup-echo-area-message
 	"kyle")
   (setq lisp-base "~/.emacs.d/lisp/")
-  (setq lisp-files '("custom.el"    ; first, load customized-*
-		     "display.el"   ; get your cool looks on
+  (setq lisp-files '("display.el"   ; get your cool looks on
 		     "util.el"      ; load any utilities needed
 		     "surfraw.el"   ; better browsing
 		     "personal.el"  ; any high-level customisations
@@ -42,6 +41,9 @@
 		     "dylan.el"     ; need some dylan
 		     "go.el"        ; go go go!
 		     ))
+
+  (setq custom-file "~/.emacs.d/lisp/custom.el")
+  (load custom-file)
 
   ;; load the lisp files
   (mapcar #'load
