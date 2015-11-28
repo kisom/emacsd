@@ -34,12 +34,6 @@
 ;; i like refilling paragraphs
 (global-set-key (kbd "M-q") 'fill-paragraph)
 
-;; i install things to /usr/local
-(add-to-list 'exec-path "/usr/local/bin")
-
-;; and i keep personal bins in ~/bin
-(add-to-list 'exec-path "/home/kyle/bin")
-
 ;; tell me where i'm at
 (column-number-mode)
 
