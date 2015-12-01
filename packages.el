@@ -8,9 +8,9 @@
     (load (format "%sinitial-packages" lisp-base)))
 
 (add-to-list 'package-archives
-   '("marmalade" . "http://marmalade-repo.org/packages/"))
+   '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-   '("melpa" . "http://melpa.org/packages/"))
+   '("melpa" . "https://melpa.org/packages/"))
 (package-refresh-contents)
 
 (load (format "%s/%s" (getenv "HOME") ".emacs.d/initial-packages.el"))
