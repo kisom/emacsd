@@ -55,7 +55,7 @@
   (load "~/.emacs.d/contrib/scriba.el")
 
   (if 'window-system
-      (load-theme 'slime)
+      (load-theme 'eink-light)
     (progn
       (setq-default global-font-lock-mode nil)))
 

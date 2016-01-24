@@ -59,6 +59,7 @@
 (global-set-key (kbd "C-c t t") 'k-insert-timestamp)
 (global-set-key (kbd "C-c t u") 'k-insert-timestamp-tai)
 (global-set-key (kbd "C-c t d") 'k-insert-date)
+(global-set-key (kbd "C-c t y") 'k-insert-timestamp-yaklog) ;; yaklog timestamp
 
 ;; please to be not ruining pastes
 (global-set-key (kbd "C-x p") 'fix-paste)

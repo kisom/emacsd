@@ -10,7 +10,6 @@
 ;;;
 ;;; See http://surfraw.org/.
 
-(message "list-elvi-at")
 (defun list-elvi-at (base)
   "List the elvi at a given base path."
   (let ((path (format "%s/lib/surfraw/" base)))
@@ -19,21 +18,18 @@
        (shell-command-to-string
 	(concat "ls " path " | xargs"))))))
 
-(message "slash-dir-p")
 (defun slash-dir-p (path)
   "Does the string represent a name with a trailing slash?"
   (and (file-exists-p path)
        (file-directory-p path)
        (string-suffix-p "/" path)))
 
-(message "strip-trailing-slash")
 (defun strip-trailing-slash (path)
   "In order to traverse a path upwards, we shall need to remove
 the trailing slash from the directory name."
   (when (slash-dir-p path)
     (cl-subseq path 0 -1)))
 
-(message "*surfraw-places*")
 ;;; Where oh where can I find the elvis?
 (defvar *surfraw-places*
   (let* ((base-locations (list "/usr/local" "/usr"))
@@ -47,7 +43,6 @@ the trailing slash from the directory name."
       base-locations)))
 
 
-(message "*elvi-list*")
 ;;; Grab the first set of elvis that's non-empty.
 (defvar *elvi-list*
   (cl-reduce (lambda (x y)
@@ -56,11 +51,9 @@ the trailing slash from the directory name."
 	     :initial-value (list-elvi-at
 			     (car *surfraw-places*))))
 
-(message "*surfraw-browse*")
 (defcustom *surfraw-browse* #'w3m-browse-url
   "Set the browser to use with surfraw.")
 
-(message "surfraw")
 (defun surfraw (elvi args)
   "Reclaim the EmacsOS with the großartig surfraw."
   (interactive (list
