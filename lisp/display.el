@@ -7,11 +7,14 @@
     (set-frame-parameter nil 'font font)
     (set-face-attribute 'default nil :font font)))
 
-(let* ((ffam (font-family-list))
-       (font (or (font-present-p "Triplicate T4c" ffam)
-		 (font-present-p "Inconsolata" ffam)
-		 (font-present-p "Anonymous Pro" ffam)
-		 (font-present-p "Ubuntu Mono" ffam))))
+(defun select-font ()
+  (let ((ffam (font-family-list)))
+    (or (font-present-p "Triplicate T4c" ffam)
+	(font-present-p "Inconsolata" ffam)
+	(font-present-p "Anonymous Pro" ffam)
+	(font-present-p "Ubuntu Mono" ffam))))
+
+(let ((font (select-font)))
   (when font
     (pcase (system-name)
       ("tessier" (set-font font 12))
