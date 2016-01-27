@@ -21,7 +21,7 @@
 
 (defun k-insert-timestamp-yaklog ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%d %H:%m"
+  (insert (format-time-string "%Y-%m-%d %H:%M"
 			      (current-time))))
 
 (defun k-insert-timestamp ()
