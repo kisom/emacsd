@@ -54,6 +54,9 @@
   ;; load scriba from contrib
   (load "~/.emacs.d/contrib/scriba.el")
 
+  ;; load gforth from contrib
+  (load "~/.emacs.d/contrib/gforth.el")
+
   (if 'window-system
       (load-theme 'eink-light)
     (progn
