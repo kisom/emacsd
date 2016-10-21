@@ -73,7 +73,7 @@
 (add-to-list 'auto-mode-alist
 	     '("\\.pm$" . text-mode))
 
-;;; auto sexp formatting 
+;;; auto sexp formatting
 (global-set-key (kbd "C-c C-l f") 'sexp-fmt)
 
 (global-set-key (kbd "C-h u") 'woman)
@@ -101,3 +101,29 @@
 ;; 	'("\\.epub$" . no-conversion))
 ;;        auto-coding-alist))
 
+
+;; goto-line faster
+(global-set-key (kbd "C-c g") 'goto-line)
+
+
+;;; Salt states should be treated as YAML, which works better for me
+;;; than than the Salt major mode.
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))
+
+;;; infidel modes are those unclean modes that shouldn't have EOL
+;;; whitespace-stripping done.
+(defun infidel-mode-p ()
+  (pcase major-mode
+    (`fundamental-mode t)
+    (_ nil)))
+
+;;; nuke EOL-whitespace, unless we're in fundamental mode would should
+;;; be left as-is.
+(defun cleanup-buffer ()
+  (unless (infidel-mode-p)
+    (let ((delete-trailing-lines t))
+      (save-excursion
+	(delete-trailing-whitespace)))))
+
+;;; not much use if we don't install this thing
+(add-hook 'before-save-hook 'cleanup-buffer)

@@ -22,9 +22,13 @@
  '(linum-format " %7i ")
  '(package-selected-packages
    (quote
-    (disaster discover rust-mode rustfmt xcscope company-go company-cabal company-c-headers company c-eldoc auto-complete-clang ample-zen-theme ample-theme ac-c-headers yaml-mode w3m utop undo-tree tuareg tronesque-theme transpose-frame sublime-themes slime-theme slime slamhound scpaste rainbow-delimiters paredit ox-reveal orgbox org-wc org-projectile org-presie org-present org-pandoc org-journal org-jira org-beautify-theme org-ac niclein merlin markdown-mode magit kibit-mode jira irfc hippie-expand-haskell hindent hi2 go-mode gist ghci-completion ghc flymake-hlint flymake-haskell-multi flycheck-haskell epresent ebal dylan-mode clojurescript-mode cider caskxy cask bubbleberry-theme ag 0blayout)))
+    (go-eldoc confluence matlab-mode disaster discover rust-mode rustfmt xcscope company-go company-cabal company-c-headers company c-eldoc auto-complete-clang ample-zen-theme ample-theme ac-c-headers yaml-mode w3m utop undo-tree tuareg tronesque-theme transpose-frame sublime-themes slime-theme slime slamhound scpaste rainbow-delimiters paredit ox-reveal orgbox org-wc org-projectile org-presie org-present org-pandoc org-journal org-jira org-beautify-theme org-ac niclein merlin markdown-mode magit kibit-mode jira irfc hippie-expand-haskell hindent hi2 go-mode gist ghci-completion ghc flymake-hlint flymake-haskell-multi flycheck-haskell epresent ebal dylan-mode clojurescript-mode cider caskxy cask bubbleberry-theme ag 0blayout)))
  '(powerline-color1 "#3d3d68")
- '(powerline-color2 "#292945"))
+ '(powerline-color2 "#292945")
+
+ ;; Fuck you, confluence. What a goddamned piece of shit.
+ '(confluence-url "https://wiki.cfops.it/rpc/xmlrpc")
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
