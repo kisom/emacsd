@@ -105,7 +105,6 @@
 ;; goto-line faster
 (global-set-key (kbd "C-c g") 'goto-line)
 
-
 ;;; Salt states should be treated as YAML, which works better for me
 ;;; than than the Salt major mode.
 (add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))

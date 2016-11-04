@@ -7,6 +7,7 @@
     (set-frame-parameter nil 'font font)
     (set-face-attribute 'default nil :font font)))
 
+;
 (defun select-font ()
   (let ((ffam (font-family-list)))
     (or (font-present-p "Triplicate T4c" ffam)
